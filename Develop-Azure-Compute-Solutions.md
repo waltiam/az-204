@@ -2,7 +2,38 @@
 
 * Implement IaaS solutions
   * provision virtual machines (VMs)
+    * provisioning a virtual machine results in the following:
+      * network
+      * machine
+      * network interface (NIC)
+      * public IP address
+      * disks
+      * firewall (NSG)
+    * create from the azure console
+      * default firewall rules block all traffic including http on port 80
+      * add firewall rules to open port:
+        * 80 (http)
+        * 8172 (web deploy)
+      * enable remote connections in the IIS manager
+      * install .net core on VM
+      * install web deploy tool
+      * order is important (web deploy last)
+    * only standard plan IP addresses can have static IP 
+    * linux deployments require the following steps
+      * use _WinScp_ for windows to linux deployments
+      * install dotnet framework
+      * execute the dotnet packaged app
+      * needs a webserver (nginx)
+      * configure _nginx_ to redirect port 80 (public) to 5000 (private)
+      * [**accelerated networking**](https://docs.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-powershell)
+    * possible to deploy a custom image
+      * _sysprep_ is a windows tool for removing user information and makes a generic / generalized version.
+      * this is the use of the capture button
   * configure, validate, and deploy ARM templates
+    * _Azure Resource Manager_
+    * JSON script
+    * _Azure CLI_ 
+      * multiplatform including _Azure_ cloud
   * configure container images for solutions
   * publish an image to the Azure Container Registry
   * run containers by using Azure Container Instance
