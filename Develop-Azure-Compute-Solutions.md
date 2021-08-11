@@ -33,17 +33,35 @@
     * _Azure Resource Manager_
     * JSON script
     * _Azure CLI_ 
-      * multiplatform including _Azure_ cloud
-  * configure container images for solutions
-  * publish an image to the Azure Container Registry
-  * run containers by using Azure Container Instance
+      * multiplatform including [_Azure_ cloud](https://shell.azure.com/)
+    * _a bunch of stuff on backing up VM and restoring VM_
+  * **configure container images for solutions**
+  * **publish an image to the Azure Container Registry**
+  * **run containers by using Azure Container Instance**
 * Create Azure App Service Web Apps
   * create an Azure App Service Web App
+    * supports multiple languages
+    * App Service is _Platform as a Service_ (PaaS)
+    * needs to be deployed in an _App Service Plan_
+      * the billing plan supports different _Web App_
+      * a single plan can host multiple services and apps
+    * creating a _web app_ will create an _app service plan_
   * enable diagnostics logging
   * deploy code to a web app
+    * using Visual Studio
+    * using _az_ CLI
+    * map custom domain
   * configure web app settings including SSL, API settings, and connection strings
-  * implement autoscaling rules including scheduled autoscaling and autoscaling by 
-  * erational or system metrics
+    * azure console to configure ssl
+    * CORS
+    * deployment slots used for rollouts
+    * the code for configuration setting may require a nuget package
+  * implement autoscaling rules including scheduled autoscaling and autoscaling by operational or system metrics
+    * auto scaling is based on the app service plan
+    * can be scaled on:
+      * service plan
+      * storage queue
+      * Service bus queue
 Implement Azure functions
   * create and deploy Azure Functions apps
   * implement input and output bindings for a function
